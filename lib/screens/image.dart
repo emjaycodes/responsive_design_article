@@ -51,14 +51,15 @@ class ResponsiveImage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/images/3.0x/flutter_logo.png',
+            'assets/images/4.0x/flutter_logo.png',
+            
             width: 150.0,
             height: 150.0,
           ),
           const SizedBox(height: 20.0),
           const Text(
             'Large Screen Layout',
-            // style: TextStyle(color: Colors.white),
+            style: TextStyle(fontSize: 40),
           ),
         ],
       ),

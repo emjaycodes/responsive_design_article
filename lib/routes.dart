@@ -14,7 +14,7 @@ import 'screens/wrap.dart';
 
 class AppRoutes {
   static const splash = '/';
-  static const home = '/MyResponsiveWidget';
+  static const home = '/NonResponsiveWidget';
   static const alignAlinment = '/AlignAlinment';
   static const responsiveGridView = '/responsiveGridView';
   static const responsiveImage = '/ResponsiveImage';
@@ -28,13 +28,13 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> current = {
     splash: (context) => list(context), 
-    home:(p0) => const MyResponsiveWidget(),
+    home:(p0) => const NonResponsiveWidget(),
     alignAlinment:(p0) => const AlignAlinment(),
     responsiveGridView:(p0) => const ResponsiveGridView(),
     responsiveImage:(p0) => const ResponsiveImage(),
-    layoutWidget:(p0) => const LayoutWidget(),
+    layoutWidget:(p0) =>  LayoutBuilderExample (),
     mediaQueryWidget:(p0) => const MediaQueryWidget(),
-    orientationLandscapeProtrait:(p0) => const OrientationLandscapeProtrait(),
+    orientationLandscapeProtrait:(p0) =>  OrientationLayoutExample(),
     rowColumnWidget:(p0) => const RowColumnWidget(),
     sizedBoxPaddingSpacerWidget:(p0) => const SizedBoxPaddingSpacerWidget(),
     responsiveWrap:(p0) =>  ResponsiveWrap(),

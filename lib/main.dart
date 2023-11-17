@@ -34,12 +34,13 @@ class MyApp extends StatelessWidget {
 }
 
 
-class MyResponsiveWidget extends StatelessWidget {
-  const MyResponsiveWidget({super.key});
+class NonResponsiveWidget extends StatelessWidget {
+  const NonResponsiveWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Non-Responsive Widget'),),
       body: Center(
         child: Container(
           width: 200.0,
@@ -47,7 +48,7 @@ class MyResponsiveWidget extends StatelessWidget {
           color: Colors.blue,
           child: const Center(
             child: Text(
-              'Responsive Content',
+              'Non Responsive Content',
               style: TextStyle(color: Colors.white),
             ),
           ),

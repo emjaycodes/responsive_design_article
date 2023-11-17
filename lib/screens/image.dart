@@ -10,12 +10,7 @@ class ResponsiveImage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Responsive Image'),
         ),
-        body: Center(
-          child: Container(
-            width: 300.0,
-            height: 200.0,
-            color: Colors.blue,
-            child: LayoutBuilder(
+        body:  LayoutBuilder(
               builder: (context, constraints) {
                 if (constraints.maxWidth < 400.0) {
                   return buildSmallLayout();
@@ -25,9 +20,7 @@ class ResponsiveImage extends StatelessWidget {
               },
             ),
           ),
-        ),
-      ),
-    );
+        );
   }
 
   Widget buildSmallLayout() {
@@ -44,7 +37,7 @@ class ResponsiveImage extends StatelessWidget {
           const SizedBox(height: 10.0),
           const Text(
             'Small Screen Layout',
-            style: TextStyle(color: Colors.white),
+            // style: TextStyle(color: Colors.white),
           ),
         ],
       ),
@@ -65,7 +58,7 @@ class ResponsiveImage extends StatelessWidget {
           const SizedBox(height: 20.0),
           const Text(
             'Large Screen Layout',
-            style: TextStyle(color: Colors.white),
+            // style: TextStyle(color: Colors.white),
           ),
         ],
       ),

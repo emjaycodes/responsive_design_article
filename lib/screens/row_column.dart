@@ -74,6 +74,7 @@ class RowColumnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Row and Column'),),
       body: Center(
         child: Container(
           color: Colors.grey[300],

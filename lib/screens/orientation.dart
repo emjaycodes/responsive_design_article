@@ -1,121 +1,69 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
-class OrientationLandscapeProtrait extends StatelessWidget {
-  const OrientationLandscapeProtrait({super.key});
+
+
+class OrientationLayoutExample extends StatelessWidget {
+  const OrientationLayoutExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Landscape and Portrait'),
-        ),
-        body: Center(
-          child: Container(
-            width: 300.0,
-            height: 200.0,
-            color: Colors.blue,
-            child:  OrientationBuilder(
-        builder: (context, orientation) {
-          if (orientation == Orientation.portrait) {
-            return buildPortraitLayout();
-          } else if (orientation == Orientation.landscape){
-            return buildLandscapeLayout();
-          }
-          return Center(
-          child: Text(
-            'Unknown Orientation',
-            style: TextStyle(fontSize: 24.0),
-          ),
-        );
-                
-        }
-          ),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Orientation Layout Example'),
       ),
-      )
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          return Center(
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              color: Colors.grey[300],
+              child: orientation == Orientation.portrait
+                  ? buildPortraitLayout()
+                  : buildLandscapeLayout(),
+            ),
+          );
+        },
+      ),
     );
   }
-
-  //   Widget buildSmallLayout() {
-  //   return OrientationBuilder(
-  //     builder: (context, orientation) {
-  //       return Align(
-  //         alignment: Alignment.center,
-  //         child: orientation == Orientation.portrait
-  //             ? buildPortraitLayout()
-  //             : buildLandscapeLayout(),
-  //       );
-  //     },
-  //   );
-  // }
-
-  // Widget buildSmallLayout() {
-  //   return const Align(
-  //     alignment: Alignment.center,
-  //     child: 
-  //     Column(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: [
-  //         Text(
-  //           'Small Screen Layout',
-  //           style: TextStyle(color: Colors.white),
-  //         ),
-  //         SizedBox(height: 10.0),
-  //         Icon(
-  //           Icons.star,
-  //           size: 30.0,
-  //           color: Colors.yellow,
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  // Widget buildLargeLayout() {
-  //   return OrientationBuilder(
-  //     builder: (context, orientation) {
-  //       return Align(
-  //         alignment: Alignment.center,
-  //         child: orientation == Orientation.portrait
-  //             ? buildPortraitLayout()
-  //             : buildLandscapeLayout(),
-  //       );
-  //     },
-  //   );
-  // }
 
   Widget buildPortraitLayout() {
     return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Icon(
-          Icons.star,
-          size: 50.0,
-          color: Colors.yellow,
+          Icons.phone_android,
+          size: 100.0,
+          color: Colors.blue,
         ),
         SizedBox(height: 20.0),
         Text(
-          'Portrait Layout',
-          style: TextStyle(color: Colors.white),
+          'Portrait Mode',
+          style: TextStyle(fontSize: 24.0),
         ),
       ],
     );
   }
 
   Widget buildLandscapeLayout() {
-    return const Row(
+    return  Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(
-          Icons.star,
-          size: 50.0,
-          color: Colors.yellow,
+        Transform.rotate(
+          angle: pi / 2.0,
+          child: const Icon(
+            Icons.phone_android,
+            size: 100.0,
+            color: Colors.green,
+          ),
         ),
-        SizedBox(width: 20.0),
-        Text(
-          'Landscape Layout',
-          style: TextStyle(color: Colors.white),
+        const SizedBox(width: 20.0),
+        const Text(
+          'Landscape Mode',
+          style: TextStyle(fontSize: 24.0),
         ),
       ],
     );

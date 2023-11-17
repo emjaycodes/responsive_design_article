@@ -42,41 +42,40 @@ class MediaQueryWidget extends StatelessWidget {
   Widget buildSmallLayout() {
     return const Text(
       'Small Screen Layout',
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(
+        fontSize: 30,
+        color: Colors.white),
     );
   }
 
   Widget buildMediumLayout() {
-    return const Column(
+    return  Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
+        const Text(
           'Medium Screen Layout',
-          style: TextStyle(color: Colors.white),
+          
+          style: TextStyle(
+            fontSize: 30,
+            color: Colors.white),
         ),
-        SizedBox(height: 20.0),
-        Icon(
-          Icons.star,
-          size: 50.0,
-          color: Colors.yellow,
-        ),
+        const SizedBox(height: 20.0),
+        Image.asset('assets/images/2.0x/flutter_logo.png')
       ],
     );
   }
 
   Widget buildLargeLayout() {
-    return const Row(
+    return  Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(
-          Icons.star,
-          size: 50.0,
-          color: Colors.yellow,
-        ),
-        SizedBox(width: 20.0),
-        Text(
+         Image.asset('assets/images/3.0x/flutter_logo.png'),
+        const SizedBox(width: 20.0),
+        const Text(
           'Large Screen Layout',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            fontSize: 30,
+            color: Colors.white),
         ),
       ],
     );

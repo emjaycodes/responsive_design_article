@@ -24,9 +24,15 @@ class AlignAlinment extends StatelessWidget {
   }
 
   Widget buildSmallLayout() {
-    return const Align(
+    return  Align(
       alignment: Alignment.center,
-      child: Column(
+      child: 
+       Center(
+          child: Container(
+            width: 300.0,
+            height: 200.0,
+            color: Colors.blue,
+            child:const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
@@ -34,14 +40,9 @@ class AlignAlinment extends StatelessWidget {
             // style: TextStyle(color: Colors.white),
           ),
           SizedBox(height: 10.0),
-          Icon(
-            Icons.star,
-            size: 30.0,
-            color: Colors.yellow,
-          ),
         ],
       ),
-    );
+    )));
   }
 
   Widget buildLargeLayout() {

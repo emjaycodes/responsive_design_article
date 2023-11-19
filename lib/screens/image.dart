@@ -5,64 +5,47 @@ class ResponsiveImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Responsive Image'),
-        ),
-        body:  LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth < 400.0) {
-                  return buildSmallLayout();
-                } else {
-                  return buildLargeLayout();
-                }
-              },
+    double devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Responsive Image'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Using Image.asset to load images based on device pixel ratio
+            Image.asset(
+              getImageBasedOnDevicePixelRatio(context),
             ),
-          ),
-        );
-  }
-
-  Widget buildSmallLayout() {
-    return Align(
-      alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/images/2.0x/flutter_logo.png',
-            width: 100.0,
-            height: 100.0,
-          ),
-          const SizedBox(height: 10.0),
-          const Text(
-            'Small Screen Layout',
-            // style: TextStyle(color: Colors.white),
-          ),
-        ],
+            const SizedBox(height: 20),
+            if (devicePixelRatio > 2.0) ...{
+              const Text('High Pixel Ratio Device'),
+            } else if (devicePixelRatio > 1.5) ...{
+              const Text('Medium Pixel Ratio Device'),
+            } else ...{
+              const Text('Normal Pixel Ratio Device')
+            }
+          ],
+        ),
       ),
     );
   }
 
-  Widget buildLargeLayout() {
-    return Align(
-      alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/images/4.0x/flutter_logo.png',
-            
-            width: 150.0,
-            height: 150.0,
-          ),
-          const SizedBox(height: 20.0),
-          const Text(
-            'Large Screen Layout',
-            style: TextStyle(fontSize: 40),
-          ),
-        ],
-      ),
-    );
+  String getImageBasedOnDevicePixelRatio(
+    BuildContext context,
+  ) {
+    // Default image path
+    String imagePath = 'assets/images/flutter_logo.png';
+    double devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
+    // Check device pixel ratio and load appropriate image
+    if (devicePixelRatio > 2.0) {
+      imagePath =
+          'assets/images/4.0x/flutter_logo.png'; // 4x image for higher density devices
+    } else if (devicePixelRatio > 1.5) {
+      imagePath =
+          'assets/images/2.0x/flutter_logo.png'; // 2x image for medium density devices
+    }
+    return imagePath;
   }
 }

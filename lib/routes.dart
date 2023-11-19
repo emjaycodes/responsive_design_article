@@ -31,13 +31,13 @@ class AppRoutes {
     home:(p0) => const NonResponsiveWidget(),
     alignAlinment:(p0) => const AlignAlinment(),
     responsiveGridView:(p0) => const ResponsiveGridView(),
-    responsiveImage:(p0) => const ResponsiveImage(),
-    layoutWidget:(p0) =>  LayoutBuilderExample (),
+    responsiveImage:(p0) =>  const ResponsiveImage(),
+    layoutWidget:(p0) =>  const LayoutBuilderExample (),
     mediaQueryWidget:(p0) => const MediaQueryWidget(),
-    orientationLandscapeProtrait:(p0) =>  OrientationLayoutExample(),
+    orientationLandscapeProtrait:(p0) =>  const OrientationLayoutExample(),
     rowColumnWidget:(p0) => const RowColumnWidget(),
     sizedBoxPaddingSpacerWidget:(p0) => const SizedBoxPaddingSpacerWidget(),
-    responsiveWrap:(p0) =>  ResponsiveWrap(),
+    responsiveWrap:(p0) =>  const ResponsiveWrap(),
 
   };
   /// A sample widget that just shows the entire routes in the app

@@ -21,7 +21,7 @@ class ResponsiveWrap extends StatelessWidget {
 
   Widget buildResponsiveLayout(double maxWidth) {
     if (maxWidth < 400.0) {
-      return buildSmallLayout();
+      return buildLargeLayout();
     } else {
       return buildLargeLayout();
     }

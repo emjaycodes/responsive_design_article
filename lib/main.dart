@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_design_article/routes.dart';
 
-// import 'screens/align_alignment.dart';
-// import 'screens/grid_gridview.dart';
-// import 'screens/image.dart';
-// import 'screens/layout.dart';
-// import 'screens/media_queries.dart';
-// import 'screens/orientation.dart';
-// import 'screens/row_column.dart';
-// import 'screens/spacer_sizedbox_padding.dart';
-// import 'screens/wrap.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -40,7 +30,7 @@ class NonResponsiveWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Non-Responsive Widget'),),
+      appBar: AppBar(title: const Text('Non-Responsive Widget'),),
       body: Center(
         child: Container(
           width: 200.0,

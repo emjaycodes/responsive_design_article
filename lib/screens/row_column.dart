@@ -1,80 +1,14 @@
 import 'package:flutter/material.dart';
 
-// class RowColumnWidget extends StatelessWidget {
-//   const RowColumnWidget({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         appBar: AppBar(
-//           title: const Text('Row and Column'),
-//         ),
-//         body: Center(
-//           child: Container(
-//             width: 300.0,
-//             height: 200.0,
-//             color: Colors.blue,
-//             child: LayoutBuilder(
-//               builder: (context, constraints) {
-//                 if (constraints.maxWidth < 400.0) {
-//                   return buildSmallLayout();
-//                 } else {
-//                   return buildLargeLayout();
-//                 }
-//               },
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-
-//   Widget buildSmallLayout() {
-//     return const Column(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       children: [
-//         Text(
-//           'Small Screen Layout',
-//           style: TextStyle(color: Colors.white),
-//         ),
-//         SizedBox(height: 10.0),
-//         Icon(
-//           Icons.star,
-//           size: 30.0,
-//           color: Colors.yellow,
-//         ),
-//       ],
-//     );
-//   }
-
-//   Widget buildLargeLayout() {
-//     return const Row(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       children: [
-//         Icon(
-//           Icons.star,
-//           size: 50.0,
-//           color: Colors.yellow,
-//         ),
-//         SizedBox(width: 20.0),
-//         Text(
-//           'Large Screen Layout',
-//           style: TextStyle(color: Colors.white),
-//         ),
-//       ],
-//     );
-//   }
-// }
-
-
 class RowColumnWidget extends StatelessWidget {
   const RowColumnWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Row and Column'),),
+      appBar: AppBar(
+        title: const Text('Row and Column'),
+      ),
       body: Center(
         child: Container(
           color: Colors.grey[300],
@@ -103,19 +37,40 @@ class RowColumnWidget extends StatelessWidget {
         Container(
           height: 100,
           color: Colors.blue,
-          child: const Center(child: Text('Item 1', style: TextStyle(color: Colors.white))),
+          child: const Center(
+            child: Text(
+              'Item 1',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
+            ),
+          ),
         ),
         const SizedBox(height: 20),
         Container(
           height: 100,
           color: Colors.green,
-          child: const Center(child: Text('Item 2', style: TextStyle(color: Colors.white))),
+          child: const Center(
+              child: Text('Item 2',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40,
+                  ))),
         ),
         const SizedBox(height: 20),
         Container(
           height: 100,
           color: Colors.orange,
-          child: const Center(child: Text('Item 3', style: TextStyle(color: Colors.white))),
+          child: const Center(
+            child: Text(
+              'Item 3',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
+            ),
+          ),
         ),
       ],
     );
@@ -129,19 +84,43 @@ class RowColumnWidget extends StatelessWidget {
           width: 150,
           height: 200,
           color: Colors.blue,
-          child: const Center(child: Text('Item 1', style: TextStyle(color: Colors.white))),
+          child: const Center(
+            child: Text(
+              'Item 1',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
+            ),
+          ),
         ),
         Container(
           width: 150,
           height: 200,
           color: Colors.green,
-          child: const Center(child: Text('Item 2', style: TextStyle(color: Colors.white))),
+          child: const Center(
+            child: Text(
+              'Item 2',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
+            ),
+          ),
         ),
         Container(
           width: 150,
           height: 200,
           color: Colors.orange,
-          child: const Center(child: Text('Item 3', style: TextStyle(color: Colors.white))),
+          child: const Center(
+            child: Text(
+              'Item 3',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
+            ),
+          ),
         ),
       ],
     );

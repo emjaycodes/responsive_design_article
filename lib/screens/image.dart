@@ -6,6 +6,9 @@ class ResponsiveImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
+    double roundedPixelRatio =
+        double.parse(devicePixelRatio.toStringAsFixed(2));
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Responsive Image'),
@@ -19,8 +22,16 @@ class ResponsiveImage extends StatelessWidget {
               getImageBasedOnDevicePixelRatio(context),
             ),
             const SizedBox(height: 20),
+            Text(
+              'Device Pixel Ratio: $roundedPixelRatio',
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 20),
             if (devicePixelRatio > 2.0) ...{
-              const Text('High Pixel Ratio Device'),
+              const Text(
+                'High Pixel Ratio Device',
+                style: TextStyle(fontSize: 20),
+              ),
             } else if (devicePixelRatio > 1.5) ...{
               const Text('Medium Pixel Ratio Device'),
             } else ...{

@@ -17,12 +17,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       routes: AppRoutes.current,
       // home:  const ResponsiveGridView(),
     );
   }
 }
-
 
 class NonResponsiveWidget extends StatelessWidget {
   const NonResponsiveWidget({super.key});
@@ -30,16 +30,22 @@ class NonResponsiveWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Non-Responsive Widget'),),
+      appBar: AppBar(
+        title: const Text('Non-Responsive Widget'),
+      ),
       body: Center(
         child: Container(
-          width: 200.0,
-          height: 100.0,
+          width: 400.0,
+          height: 200.0,
           color: Colors.blue,
           child: const Center(
             child: Text(
-              'Non Responsive Content',
-              style: TextStyle(color: Colors.white),
+              'Non Responsive container',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
             ),
           ),
         ),

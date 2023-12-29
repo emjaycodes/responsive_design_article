@@ -10,39 +10,38 @@ class AlignAlinment extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Align and Alinment'),
         ),
-        body:  LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth < 600.0) {
-                  return buildSmallLayout();
-                } else {
-                  return buildLargeLayout();
-                }
-              },
-            ),
-          ),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth < 600.0) {
+              return buildSmallLayout();
+            } else {
+              return buildLargeLayout();
+            }
+          },
+        ),
+      ),
     );
   }
 
   Widget buildSmallLayout() {
-    return  Align(
-      alignment: Alignment.center,
-      child: 
-       Center(
-          child: Container(
-            width: 300.0,
-            height: 200.0,
-            color: Colors.blue,
-            child:const Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Small Screen Layout',
-            // style: TextStyle(color: Colors.white),
+    return Align(
+        alignment: Alignment.center,
+        child: Center(
+            child: Container(
+          width: 300.0,
+          height: 200.0,
+          color: Colors.blue,
+          child: const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Small Screen Layout',
+                // style: TextStyle(color: Colors.white),
+              ),
+              SizedBox(height: 10.0),
+            ],
           ),
-          SizedBox(height: 10.0),
-        ],
-      ),
-    )));
+        )));
   }
 
   Widget buildLargeLayout() {

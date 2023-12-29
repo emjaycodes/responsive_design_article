@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-
-
 class OrientationLayoutExample extends StatelessWidget {
   const OrientationLayoutExample({super.key});
 
@@ -48,7 +46,7 @@ class OrientationLayoutExample extends StatelessWidget {
   }
 
   Widget buildLandscapeLayout() {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [

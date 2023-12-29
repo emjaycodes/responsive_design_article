@@ -11,12 +11,11 @@ class ResponsiveGridView extends StatelessWidget {
           title: const Text('GridView'),
         ),
         body: LayoutBuilder(
-              builder: (context, constraints) {
-                return buildResponsiveGrid(
-                  constraints.maxWidth);
-              },
-            ),
-          ),
+          builder: (context, constraints) {
+            return buildResponsiveGrid(constraints.maxWidth);
+          },
+        ),
+      ),
     );
   }
 
@@ -37,7 +36,10 @@ class ResponsiveGridView extends StatelessWidget {
           child: Center(
             child: Text(
               'Item $index',
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+              ),
             ),
           ),
         );

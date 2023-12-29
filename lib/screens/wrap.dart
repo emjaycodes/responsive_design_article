@@ -10,13 +10,13 @@ class ResponsiveWrap extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Responsive Wrap Example'),
         ),
-        body:  LayoutBuilder(
-              builder: (context, constraints) {
-                return buildResponsiveLayout(constraints.maxWidth);
-              },
-            ),
-          ),
-        );
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            return buildResponsiveLayout(constraints.maxWidth);
+          },
+        ),
+      ),
+    );
   }
 
   Widget buildResponsiveLayout(double maxWidth) {
@@ -27,7 +27,6 @@ class ResponsiveWrap extends StatelessWidget {
     }
   }
 
-
   Widget buildSmallLayout() {
     // Simulate containers overflowing without Wrap widget
     return Row(
@@ -36,8 +35,8 @@ class ResponsiveWrap extends StatelessWidget {
         12,
         (index) => Container(
           margin: const EdgeInsets.all(8.0),
-          width: 80.0,
-          height: 80.0,
+          width: 100.0,
+          height: 100.0,
           color: Colors.blue,
           child: Center(
             child: Text(
@@ -56,15 +55,18 @@ class ResponsiveWrap extends StatelessWidget {
       spacing: 12.0,
       runSpacing: 12.0,
       children: List.generate(
-        20,
-        (index) => Container(
-          width: 100.0,
-          height: 100.0,
-          color: Colors.blue,
-          child: Center(
-            child: Text(
-              'Item $index',
-              style: const TextStyle(color: Colors.white),
+        15,
+        (index) => Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: 100.0,
+            height: 100.0,
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Item $index',
+                style: const TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ),
